@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neva Bita | Próximamente</title>
 
-    <meta name="description" content="Neva Bita está preparando experiencias de nieve, montaña y aventura. Muy pronto estaremos online.">
+    <meta 
+        name="description" 
+        content="Neva Bita está preparando escapadas a la nieve en Sierra Nevada para la temporada de invierno 2026/2027. Muy pronto compartiremos novedades, packs e ideas."
+    >
 
     <link rel="stylesheet" href="styles.css">
 
@@ -13,14 +16,18 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Story+Script&display=swap" rel="stylesheet">
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Story+Script&display=swap" 
+        rel="stylesheet"
+    >
 </head>
 
 <body>
 
     <main class="coming-soon">
 
-        <section class="coming-soon__card">
+        <!-- HERO PRINCIPAL -->
+        <section class="coming-soon__card hero-section">
 
             <img 
                 src="images/nevabitalogo.png" 
@@ -28,37 +35,311 @@
                 class="coming-soon__logo"
             >
 
-           <h1 class="coming-soon__title">
-    Neva <i class="fa-solid fa-snowflake"></i> Bita
-</h1>
+            <h1 class="coming-soon__title">
+                Neva <i class="fa-solid fa-snowflake"></i> Bita
+            </h1>
 
             <p class="coming-soon__subtitle">
-                Aventuras en la nieve, escapadas con encanto y planes hechos con mucho mimo.
+                Escapadas a la nieve en Sierra Nevada con encanto, organización y mucho mimo.
             </p>
 
             <div class="coming-soon__badge">
-                Próximamente
+                Próximamente · Invierno 2026/2027
             </div>
 
             <p class="coming-soon__text">
-                Estamos preparando algo especial para amantes de la montaña, la nieve y las experiencias bonitas.
-                Muy pronto podrás descubrir nuestros packs, servicios y escapadas.
+                Todavía no estamos abiertos oficialmente para reservas, pero ya estamos preparando algo especial
+                para amantes de la montaña, la nieve y las experiencias bonitas.
+            </p>
+
+            <p class="coming-soon__text">
+                Mientras llega la temporada, iremos compartiendo ideas, consejos, novedades y pequeñas pistas
+                de todo lo que estamos creando.
             </p>
 
             <div class="coming-soon__actions">
                 <a 
-                    href="https://wa.me/34624887172" 
+                    href="#lista-espera" 
+                    class="coming-soon__button coming-soon__button--primary"
+                >
+                    <i class="fa-solid fa-bell"></i>
+                    Quiero enterarme
+                </a>
+
+                <a 
+                    href="https://www.instagram.com/nevabita?igsh=MXFxZW9hZW1zdzB3Ng==" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     class="coming-soon__button coming-soon__button--secondary"
-                    aria-label="Contactar por WhatsApp"
                 >
-                    <i class="fa-brands fa-whatsapp"></i>
-                    WhatsApp
+                    <i class="fa-brands fa-instagram"></i>
+                    Instagram
                 </a>
+
                 <a 
                     href="mailto:info@nevabitaexperience.com" 
+                    class="coming-soon__button coming-soon__button--secondary"
+                >
+                    <i class="fa-solid fa-envelope"></i>
+                    Escríbenos
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- QUÉ ES NEVA BITA -->
+        <section class="coming-soon__card info-section" id="que-es-nevabita">
+
+            <span class="section-label">Qué estamos creando</span>
+
+            <h2>Escapadas a la nieve sin complicarte la vida</h2>
+
+            <p>
+                Neva Bita nace para preparar experiencias en Sierra Nevada pensadas para personas que quieren
+                disfrutar de la nieve sin tener que organizarlo todo desde cero.
+            </p>
+
+            <p>
+                Queremos crear escapadas bonitas, cercanas y bien pensadas: con ideas de alojamiento,
+                planes, recomendaciones, consejos y detalles que hagan que la experiencia sea más fácil.
+            </p>
+
+        </section>
+
+
+        <!-- QUÉ ESTAMOS PREPARANDO -->
+        <section class="coming-soon__card info-section" id="que-estamos-preparando">
+
+            <span class="section-label">Próximamente</span>
+
+            <h2>Qué estamos preparando</h2>
+
+            <div class="feature-grid">
+
+                <article class="feature-card">
+                    <i class="fa-solid fa-mountain-sun"></i>
+                    <h3>Escapadas organizadas</h3>
+                    <p>
+                        Ideas de alojamiento, nieve, planes y recomendaciones para que solo tengas que pensar en disfrutar.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <i class="fa-solid fa-person-skiing"></i>
+                    <h3>Packs para distintos estilos</h3>
+                    <p>
+                        Opciones más sencillas, escapadas cómodas y planes pensados para grupos, parejas o amigos.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <i class="fa-solid fa-mug-hot"></i>
+                    <h3>Planes con encanto</h3>
+                    <p>
+                        Porque Sierra Nevada también se puede vivir paseando, tomando algo, haciendo fotos o disfrutando del ambiente.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <h3>Consejos útiles</h3>
+                    <p>
+                        Compartiremos trucos, recomendaciones y respuestas para quienes vayan a la nieve por primera vez.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ENCUESTA / PARTICIPACIÓN -->
+        <section class="coming-soon__card info-section" id="participa">
+
+            <span class="section-label">Tu opinión cuenta</span>
+
+            <h2>Ayúdanos a crear escapadas que te encanten</h2>
+
+            <p>
+                Mientras damos forma a Neva Bita, queremos saber qué tipo de experiencia te gustaría vivir.
+                Tus ideas nos ayudan a crear packs más reales, útiles y bonitos.
+            </p>
+
+            <div class="survey-options">
+
+                <button 
+                    type="button"
+                    class="survey-option"
+                    data-option="Quiero algo económico y fácil"
+                >
+                    Quiero algo económico y fácil
+                </button>
+
+                <button 
+                    type="button"
+                    class="survey-option"
+                    data-option="Quiero algo cómodo y bonito"
+                >
+                    Quiero algo cómodo y bonito
+                </button>
+
+                <button 
+                    type="button"
+                    class="survey-option"
+                    data-option="Quiero ir con amigos y ambientillo"
+                >
+                    Quiero ir con amigos y ambientillo
+                </button>
+
+                <button 
+                    type="button"
+                    class="survey-option"
+                    data-option="No sé esquiar, pero quiero vivir la experiencia"
+                >
+                    No sé esquiar, pero quiero vivir la experiencia
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- LISTA DE ESPERA -->
+        <section class="coming-soon__card info-section" id="lista-espera">
+
+            <span class="section-label">Lista de interesados</span>
+
+            <h2>¿Quieres enterarte antes que nadie?</h2>
+
+            <p>
+                Déjanos tus datos y te avisaremos cuando empecemos a enseñar packs, fechas,
+                ideas de escapadas y novedades de Neva Bita.
+            </p>
+
+            <form class="waitlist-form" id="waitlistForm">
+
+                <label for="nombre">Nombre</label>
+                <input 
+                    type="text" 
+                    id="nombre" 
+                    name="nombre" 
+                    placeholder="Tu nombre" 
+                    required
+                >
+
+                <label for="email">Email</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    placeholder="Tu email" 
+                    required
+                >
+
+                <label for="telefono">Teléfono</label>
+                <input 
+                    type="tel" 
+                    id="telefono" 
+                    name="telefono" 
+                    placeholder="Tu teléfono, si quieres"
+                >
+
+                <label for="tipoEscapada">Tipo de escapada</label>
+                <select id="tipoEscapada" name="tipoEscapada">
+                    <option value="">¿Qué tipo de escapada te llama más?</option>
+                    <option value="Quiero algo económico y fácil">Quiero algo económico y fácil</option>
+                    <option value="Quiero algo cómodo y bonito">Quiero algo cómodo y bonito</option>
+                    <option value="Quiero ir con amigos y ambientillo">Quiero ir con amigos y ambientillo</option>
+                    <option value="No sé esquiar, pero quiero vivir la experiencia">No sé esquiar, pero quiero vivir la experiencia</option>
+                    <option value="Todavía no lo sé">Todavía no lo sé</option>
+                </select>
+
+                <label for="mensaje">Mensaje</label>
+                <textarea 
+                    id="mensaje" 
+                    name="mensaje" 
+                    placeholder="Cuéntanos qué te gustaría encontrar en Neva Bita"
+                ></textarea>
+
+                <button type="submit" class="coming-soon__button coming-soon__button--primary">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Apuntarme
+                </button>
+
+                <p class="form-message" id="formMessage"></p>
+
+                <small>
+                    Todavía no estamos abriendo reservas. Solo te avisaremos de novedades relacionadas con Neva Bita.
+                </small>
+
+            </form>
+
+        </section>
+
+
+        <!-- MIENTRAS LLEGA LA NIEVE -->
+        <section class="coming-soon__card info-section" id="mientras-llega-la-nieve">
+
+            <span class="section-label">Mientras llega la nieve</span>
+
+            <h2>Contenido que iremos compartiendo</h2>
+
+            <p>
+                Queremos que la web también tenga movimiento antes del lanzamiento oficial.
+                Por eso iremos preparando contenido útil, inspiración y consejos para entrar en modo nieve.
+            </p>
+
+            <div class="mini-post-grid">
+
+                <article class="mini-post">
+                    <h3>Qué llevar a Sierra Nevada si es tu primera vez</h3>
+                    <p>
+                        Ropa, básicos, errores típicos y cosas que agradecerás haber metido en la maleta.
+                    </p>
+                </article>
+
+                <article class="mini-post">
+                    <h3>Escapada low cost vs escapada cómoda</h3>
+                    <p>
+                        Qué cambia, qué incluye cada estilo y cómo elegir según tu presupuesto.
+                    </p>
+                </article>
+
+                <article class="mini-post">
+                    <h3>Planes en Sierra Nevada aunque no esquíes</h3>
+                    <p>
+                        Porque la nieve también se puede disfrutar sin ponerse unos esquís.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- CIERRE -->
+        <section class="coming-soon__card final-section">
+
+            <h2>Estamos preparando algo con mucha nieve y mucho mimo</h2>
+
+            <p>
+                Síguenos en Instagram, mándanos tus ideas o apúntate para ser de las primeras personas
+                en enterarte cuando Neva Bita empiece a enseñar sus escapadas.
+            </p>
+
+            <div class="coming-soon__actions">
+                <a 
+                    href="#lista-espera" 
                     class="coming-soon__button coming-soon__button--primary"
+                >
+                    <i class="fa-solid fa-bell"></i>
+                    Quiero enterarme
+                </a>
+
+                <a 
+                    href="mailto:info@nevabitaexperience.com" 
+                    class="coming-soon__button coming-soon__button--secondary"
                 >
                     <i class="fa-solid fa-envelope"></i>
                     Escríbenos
@@ -76,12 +357,72 @@
             </div>
 
             <p class="coming-soon__footer">
-                Web en construcción · Neva Bita
+                Web en construcción · Neva Bita · Temporada invierno 2026/2027
             </p>
 
         </section>
 
     </main>
+
+
+    <script>
+        const scriptURL = "https://script.google.com/a/macros/nevabitaexperience.com/s/AKfycbwcvDOhsl7E67jp2kQSpGz5f-Z88Qo9unn9Y9U0qzz9PbOuMakkBW23gHJkV93XndUQWg/exec";
+
+        const form = document.getElementById("waitlistForm");
+        const formMessage = document.getElementById("formMessage");
+        const tipoEscapada = document.getElementById("tipoEscapada");
+        const surveyOptions = document.querySelectorAll(".survey-option");
+
+        surveyOptions.forEach(option => {
+            option.addEventListener("click", () => {
+                const selectedOption = option.dataset.option;
+
+                tipoEscapada.value = selectedOption;
+
+                document.getElementById("lista-espera").scrollIntoView({
+                    behavior: "smooth"
+                });
+
+                formMessage.textContent = "Genial, hemos marcado tu preferencia. Ahora déjanos tus datos para avisarte.";
+                formMessage.classList.remove("form-message--error");
+                formMessage.classList.add("form-message--success");
+            });
+        });
+
+        form.addEventListener("submit", e => {
+            e.preventDefault();
+
+            formMessage.textContent = "Enviando...";
+            formMessage.classList.remove("form-message--error");
+            formMessage.classList.remove("form-message--success");
+
+            const submitButton = form.querySelector("button[type='submit']");
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando';
+
+            const formData = new FormData(form);
+
+            fetch(scriptURL, {
+                method: "POST",
+                body: formData,
+                mode: "no-cors"
+            })
+            .then(() => {
+                form.reset();
+
+                formMessage.textContent = "¡Gracias! Te hemos apuntado a la lista de interesados de Neva Bita.";
+                formMessage.classList.add("form-message--success");
+            })
+            .catch(() => {
+                formMessage.textContent = "Ups, algo ha fallado. Escríbenos a info@nevabitaexperience.com.";
+                formMessage.classList.add("form-message--error");
+            })
+            .finally(() => {
+                submitButton.disabled = false;
+                submitButton.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Apuntarme';
+            });
+        });
+    </script>
 
 </body>
 </html>
