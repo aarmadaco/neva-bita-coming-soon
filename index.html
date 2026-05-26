@@ -394,114 +394,114 @@
     </main>
 
 
-    <script>
-        const canonicalUrl = "https://nevabitaexperience.com/";
+   <script>
+    const canonicalUrl = "https://nevabitaexperience.com/";
 
-        if (window.location.hostname === "www.nevabitaexperience.com") {
-            window.location.replace(canonicalUrl);
-        }
+    function cleanUrl() {
+        window.history.replaceState({}, document.title, canonicalUrl);
+    }
 
-        if (window.location.pathname !== "/" || window.location.search || window.location.hash) {
-            window.history.replaceState({}, "", "/");
-        }
+    if (window.location.hostname === "www.nevabitaexperience.com") {
+        window.location.replace(canonicalUrl);
+    } else {
+        cleanUrl();
+    }
 
-        const scriptURL = "https://script.google.com/a/macros/nevabitaexperience.com/s/AKfycbwcvDOhsl7E67jp2kQSpGz5f-Z88Qo9unn9Y9U0qzz9PbOuMakkBW23gHJkV93XndUQWg/exec";
+    window.addEventListener("hashchange", cleanUrl);
+    window.addEventListener("popstate", cleanUrl);
+    window.addEventListener("pageshow", cleanUrl);
 
-        const form = document.getElementById("waitlistForm");
-        const formMessage = document.getElementById("formMessage");
-        const tipoEscapada = document.getElementById("tipoEscapada");
-        const surveyOptions = document.querySelectorAll(".survey-option");
-        const scrollButtons = document.querySelectorAll(".js-scroll-waitlist");
-        const emailButtons = document.querySelectorAll(".js-copy-email");
+    const scriptURL = "https://script.google.com/a/macros/nevabitaexperience.com/s/AKfycbwcvDOhsl7E67jp2kQSpGz5f-Z88Qo9unn9Y9U0qzz9PbOuMakkBW23gHJkV93XndUQWg/exec";
 
-        function cleanUrl() {
-            if (window.location.pathname !== "/" || window.location.search || window.location.hash) {
-                window.history.replaceState({}, "", "/");
-            }
-        }
+    const form = document.getElementById("waitlistForm");
+    const formMessage = document.getElementById("formMessage");
+    const tipoEscapada = document.getElementById("tipoEscapada");
+    const surveyOptions = document.querySelectorAll(".survey-option");
+    const scrollButtons = document.querySelectorAll(".js-scroll-waitlist");
+    const emailButtons = document.querySelectorAll(".js-copy-email");
 
-        function scrollToWaitlist() {
-            document.getElementById("lista-espera").scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-            cleanUrl();
-        }
-
-        scrollButtons.forEach(button => {
-            button.addEventListener("click", scrollToWaitlist);
+    function scrollToWaitlist() {
+        document.getElementById("lista-espera").scrollIntoView({
+            behavior: "smooth",
+            block: "start"
         });
 
-        surveyOptions.forEach(option => {
-            option.addEventListener("click", () => {
-                const selectedOption = option.dataset.option;
+        cleanUrl();
+    }
 
-                tipoEscapada.value = selectedOption;
+    scrollButtons.forEach(button => {
+        button.addEventListener("click", scrollToWaitlist);
+    });
 
-                scrollToWaitlist();
+    surveyOptions.forEach(option => {
+        option.addEventListener("click", () => {
+            const selectedOption = option.dataset.option;
 
-                formMessage.textContent = "Genial, hemos marcado tu preferencia. Ahora déjanos tus datos para avisarte.";
-                formMessage.classList.remove("form-message--error");
-                formMessage.classList.add("form-message--success");
-            });
-        });
+            tipoEscapada.value = selectedOption;
 
-        emailButtons.forEach(button => {
-            button.addEventListener("click", async () => {
-                const email = button.dataset.email;
-                const section = button.closest("section");
-                const message = section.querySelector(".email-copy-message");
+            scrollToWaitlist();
 
-                try {
-                    await navigator.clipboard.writeText(email);
-                    message.textContent = "Correo copiado: " + email;
-                } catch (error) {
-                    message.textContent = "Escríbenos a: " + email;
-                }
-
-                message.classList.add("email-copy-message--visible");
-                cleanUrl();
-            });
-        });
-
-        form.addEventListener("submit", e => {
-            e.preventDefault();
-
-            formMessage.textContent = "Enviando...";
+            formMessage.textContent = "Genial, hemos marcado tu preferencia. Ahora déjanos tus datos para avisarte.";
             formMessage.classList.remove("form-message--error");
-            formMessage.classList.remove("form-message--success");
-
-            const submitButton = form.querySelector("button[type='submit']");
-            submitButton.disabled = true;
-            submitButton.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando';
-
-            const formData = new FormData(form);
-
-            fetch(scriptURL, {
-                method: "POST",
-                body: formData,
-                mode: "no-cors"
-            })
-            .then(() => {
-                form.reset();
-                cleanUrl();
-
-                formMessage.textContent = "¡Gracias! Te hemos apuntado a la lista de interesados de Neva Bita.";
-                formMessage.classList.add("form-message--success");
-            })
-            .catch(() => {
-                cleanUrl();
-
-                formMessage.textContent = "Ups, algo ha fallado. Escríbenos a info@nevabitaexperience.com.";
-                formMessage.classList.add("form-message--error");
-            })
-            .finally(() => {
-                submitButton.disabled = false;
-                submitButton.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Apuntarme';
-            });
+            formMessage.classList.add("form-message--success");
         });
-    </script>
+    });
+
+    emailButtons.forEach(button => {
+        button.addEventListener("click", async () => {
+            const email = button.dataset.email;
+            const section = button.closest("section");
+            const message = section.querySelector(".email-copy-message");
+
+            try {
+                await navigator.clipboard.writeText(email);
+                message.textContent = "Correo copiado: " + email;
+            } catch (error) {
+                message.textContent = "Escríbenos a: " + email;
+            }
+
+            message.classList.add("email-copy-message--visible");
+            cleanUrl();
+        });
+    });
+
+    form.addEventListener("submit", e => {
+        e.preventDefault();
+
+        formMessage.textContent = "Enviando...";
+        formMessage.classList.remove("form-message--error");
+        formMessage.classList.remove("form-message--success");
+
+        const submitButton = form.querySelector("button[type='submit']");
+        submitButton.disabled = true;
+        submitButton.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando';
+
+        const formData = new FormData(form);
+
+        fetch(scriptURL, {
+            method: "POST",
+            body: formData,
+            mode: "no-cors"
+        })
+        .then(() => {
+            form.reset();
+            cleanUrl();
+
+            formMessage.textContent = "¡Gracias! Te hemos apuntado a la lista de interesados de Neva Bita.";
+            formMessage.classList.add("form-message--success");
+        })
+        .catch(() => {
+            cleanUrl();
+
+            formMessage.textContent = "Ups, algo ha fallado. Escríbenos a info@nevabitaexperience.com.";
+            formMessage.classList.add("form-message--error");
+        })
+        .finally(() => {
+            submitButton.disabled = false;
+            submitButton.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Apuntarme';
+        });
+    });
+</script>
 
 </body>
 </html>
