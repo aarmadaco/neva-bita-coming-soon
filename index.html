@@ -10,7 +10,8 @@
         content="Neva Bita está preparando escapadas a la nieve en Sierra Nevada para la temporada de invierno 2026/2027. Muy pronto compartiremos novedades, packs e ideas."
     >
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://nevabitaexperience.com/">
+    <link rel="stylesheet" href="styles.css?v=12">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -57,44 +58,47 @@
                 de todo lo que estamos creando.
             </p>
 
-         <div class="coming-soon__actions">
-    <a 
-        href="#lista-espera" 
-        class="coming-soon__button coming-soon__button--primary"
-    >
-        <i class="fa-solid fa-bell"></i>
-        Quiero enterarme
-    </a>
+            <div class="coming-soon__actions">
+                <button 
+                    type="button"
+                    class="coming-soon__button coming-soon__button--primary js-scroll-waitlist"
+                >
+                    <i class="fa-solid fa-bell"></i>
+                    Quiero enterarme
+                </button>
 
-    <a 
-        href="https://wa.me/34624887172" 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        class="coming-soon__button coming-soon__button--secondary"
-        aria-label="Contactar por WhatsApp"
-    >
-        <i class="fa-brands fa-whatsapp"></i>
-        WhatsApp
-    </a>
+                <a 
+                    href="https://wa.me/34624887172" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="coming-soon__button coming-soon__button--secondary"
+                    aria-label="Contactar por WhatsApp"
+                >
+                    <i class="fa-brands fa-whatsapp"></i>
+                    WhatsApp
+                </a>
 
-    <a 
-        href="mailto:info@nevabitaexperience.com" 
-        class="coming-soon__button coming-soon__button--secondary"
-    >
-        <i class="fa-solid fa-envelope"></i>
-        Escríbenos
-    </a>
+                <button 
+                    type="button"
+                    class="coming-soon__button coming-soon__button--secondary coming-soon__button--email js-copy-email"
+                    data-email="info@nevabitaexperience.com"
+                >
+                    <i class="fa-solid fa-envelope"></i>
+                    Escríbenos
+                </button>
 
-    <a 
-        href="https://www.instagram.com/nevabita?igsh=MXFxZW9hZW1zdzB3Ng==" 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        class="coming-soon__button coming-soon__button--secondary"
-    >
-        <i class="fa-brands fa-instagram"></i>
-        Instagram
-    </a>
-</div>
+                <a 
+                    href="https://www.instagram.com/nevabita?igsh=MXFxZW9hZW1zdzB3Ng==" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="coming-soon__button coming-soon__button--secondary"
+                >
+                    <i class="fa-brands fa-instagram"></i>
+                    Instagram
+                </a>
+            </div>
+
+            <p class="email-copy-message" aria-live="polite"></p>
 
         </section>
 
@@ -340,43 +344,46 @@
             </p>
 
             <div class="coming-soon__actions">
-    <a 
-        href="#lista-espera" 
-        class="coming-soon__button coming-soon__button--primary"
-    >
-        <i class="fa-solid fa-bell"></i>
-        Quiero enterarme
-    </a>
+                <button 
+                    type="button"
+                    class="coming-soon__button coming-soon__button--primary js-scroll-waitlist"
+                >
+                    <i class="fa-solid fa-bell"></i>
+                    Quiero enterarme
+                </button>
 
-    <a 
-        href="https://wa.me/34624887172" 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        class="coming-soon__button coming-soon__button--secondary"
-        aria-label="Contactar por WhatsApp"
-    >
-        <i class="fa-brands fa-whatsapp"></i>
-        WhatsApp
-    </a>
+                <a 
+                    href="https://wa.me/34624887172" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="coming-soon__button coming-soon__button--secondary"
+                    aria-label="Contactar por WhatsApp"
+                >
+                    <i class="fa-brands fa-whatsapp"></i>
+                    WhatsApp
+                </a>
 
-    <a 
-        href="mailto:info@nevabitaexperience.com" 
-        class="coming-soon__button coming-soon__button--secondary"
-    >
-        <i class="fa-solid fa-envelope"></i>
-        Escríbenos
-    </a>
+                <button 
+                    type="button"
+                    class="coming-soon__button coming-soon__button--secondary coming-soon__button--email js-copy-email"
+                    data-email="info@nevabitaexperience.com"
+                >
+                    <i class="fa-solid fa-envelope"></i>
+                    Escríbenos
+                </button>
 
-    <a 
-        href="https://www.instagram.com/nevabita?igsh=MXFxZW9hZW1zdzB3Ng==" 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        class="coming-soon__button coming-soon__button--secondary"
-    >
-        <i class="fa-brands fa-instagram"></i>
-        Instagram
-    </a>
-</div>
+                <a 
+                    href="https://www.instagram.com/nevabita?igsh=MXFxZW9hZW1zdzB3Ng==" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="coming-soon__button coming-soon__button--secondary"
+                >
+                    <i class="fa-brands fa-instagram"></i>
+                    Instagram
+                </a>
+            </div>
+
+            <p class="email-copy-message" aria-live="polite"></p>
 
             <p class="coming-soon__footer">
                 Web en construcción · Neva Bita · Temporada invierno 2026/2027
@@ -388,12 +395,43 @@
 
 
     <script>
+        const canonicalUrl = "https://nevabitaexperience.com/";
+
+        if (window.location.hostname === "www.nevabitaexperience.com") {
+            window.location.replace(canonicalUrl);
+        }
+
+        if (window.location.pathname !== "/" || window.location.search || window.location.hash) {
+            window.history.replaceState({}, "", "/");
+        }
+
         const scriptURL = "https://script.google.com/a/macros/nevabitaexperience.com/s/AKfycbwcvDOhsl7E67jp2kQSpGz5f-Z88Qo9unn9Y9U0qzz9PbOuMakkBW23gHJkV93XndUQWg/exec";
 
         const form = document.getElementById("waitlistForm");
         const formMessage = document.getElementById("formMessage");
         const tipoEscapada = document.getElementById("tipoEscapada");
         const surveyOptions = document.querySelectorAll(".survey-option");
+        const scrollButtons = document.querySelectorAll(".js-scroll-waitlist");
+        const emailButtons = document.querySelectorAll(".js-copy-email");
+
+        function cleanUrl() {
+            if (window.location.pathname !== "/" || window.location.search || window.location.hash) {
+                window.history.replaceState({}, "", "/");
+            }
+        }
+
+        function scrollToWaitlist() {
+            document.getElementById("lista-espera").scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+            cleanUrl();
+        }
+
+        scrollButtons.forEach(button => {
+            button.addEventListener("click", scrollToWaitlist);
+        });
 
         surveyOptions.forEach(option => {
             option.addEventListener("click", () => {
@@ -401,13 +439,29 @@
 
                 tipoEscapada.value = selectedOption;
 
-                document.getElementById("lista-espera").scrollIntoView({
-                    behavior: "smooth"
-                });
+                scrollToWaitlist();
 
                 formMessage.textContent = "Genial, hemos marcado tu preferencia. Ahora déjanos tus datos para avisarte.";
                 formMessage.classList.remove("form-message--error");
                 formMessage.classList.add("form-message--success");
+            });
+        });
+
+        emailButtons.forEach(button => {
+            button.addEventListener("click", async () => {
+                const email = button.dataset.email;
+                const section = button.closest("section");
+                const message = section.querySelector(".email-copy-message");
+
+                try {
+                    await navigator.clipboard.writeText(email);
+                    message.textContent = "Correo copiado: " + email;
+                } catch (error) {
+                    message.textContent = "Escríbenos a: " + email;
+                }
+
+                message.classList.add("email-copy-message--visible");
+                cleanUrl();
             });
         });
 
@@ -431,11 +485,14 @@
             })
             .then(() => {
                 form.reset();
+                cleanUrl();
 
                 formMessage.textContent = "¡Gracias! Te hemos apuntado a la lista de interesados de Neva Bita.";
                 formMessage.classList.add("form-message--success");
             })
             .catch(() => {
+                cleanUrl();
+
                 formMessage.textContent = "Ups, algo ha fallado. Escríbenos a info@nevabitaexperience.com.";
                 formMessage.classList.add("form-message--error");
             })
