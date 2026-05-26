@@ -9,6 +9,7 @@
 html {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -16,7 +17,22 @@ body {
     min-height: 100vh;
     font-family: 'Amatic SC', cursive;
     color: #244F83;
-    background: linear-gradient(180deg, #F7DDF4 0%, #EFD1EF 100%);
+    background: linear-gradient(180deg, #F7DDF4 0%, #EFD1EF 45%, #DFF5F4 100%);
+}
+
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+    --color-azul: #244F83;
+    --color-turquesa: #5BAEB0;
+    --color-rosa: #F7DDF4;
+    --color-rosa-oscuro: #EFD1EF;
+    --color-blanco: #FFFFFF;
+    --color-error: #B00020;
+    --sombra: 0 18px 45px rgba(36, 79, 131, 0.18);
 }
 
 
@@ -33,28 +49,33 @@ body::before {
     background-size: 24px 24px;
     opacity: 0.55;
     pointer-events: none;
+    z-index: 0;
 }
 
 
 /* =========================
-   PÁGINA PRÓXIMAMENTE
+   ESTRUCTURA GENERAL
 ========================= */
 
 .coming-soon {
+    position: relative;
+    z-index: 1;
+
     min-height: 100vh;
-    padding: 32px 20px;
+    width: 100%;
+    padding: 34px 20px 70px;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 34px;
 }
 
 .coming-soon__card {
     position: relative;
     z-index: 1;
 
-    width: 100%;
-    max-width: 760px;
+    width: min(100%, 960px);
     padding: 42px 34px;
 
     text-align: center;
@@ -63,9 +84,22 @@ body::before {
     border: 3px solid rgba(255, 255, 255, 0.95);
     border-radius: 36px;
 
-    box-shadow: 0 18px 45px rgba(36, 79, 131, 0.18);
+    box-shadow: var(--sombra);
     backdrop-filter: blur(6px);
 }
+
+.hero-section {
+    min-height: calc(100vh - 68px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================
+   HERO
+========================= */
 
 .coming-soon__logo {
     width: 130px;
@@ -80,50 +114,56 @@ body::before {
     font-size: clamp(58px, 10vw, 105px);
     line-height: 1;
 
-    color: #244F83;
+    color: var(--color-azul);
 }
 
 .coming-soon__title i {
     font-size: 0.48em;
-    color: #5BAEB0;
+    color: var(--color-turquesa);
     vertical-align: middle;
 }
 
 .coming-soon__subtitle {
-    max-width: 560px;
+    max-width: 680px;
     margin: 18px auto 22px;
 
-    font-size: clamp(28px, 4vw, 38px);
+    font-size: clamp(30px, 4vw, 42px);
     line-height: 1.1;
 
-    color: #244F83;
+    color: var(--color-azul);
 }
 
-.coming-soon__badge {
+.coming-soon__badge,
+.section-label {
     display: inline-block;
 
     margin: 8px 0 24px;
     padding: 10px 28px;
 
-    font-size: 32px;
+    font-size: 30px;
     font-weight: 700;
     letter-spacing: 1px;
 
-    color: #FFFFFF;
-    background: #5BAEB0;
+    color: var(--color-blanco);
+    background: var(--color-turquesa);
     border-radius: 999px;
     box-shadow: 0 8px 20px rgba(91, 174, 176, 0.35);
 }
 
 .coming-soon__text {
-    max-width: 620px;
-    margin: 0 auto 30px;
+    max-width: 720px;
+    margin: 0 auto 20px;
 
     font-size: 28px;
     line-height: 1.25;
 
-    color: #244F83;
+    color: var(--color-azul);
 }
+
+
+/* =========================
+   BOTONES
+========================= */
 
 .coming-soon__actions {
     display: flex;
@@ -131,7 +171,7 @@ body::before {
     gap: 16px;
     flex-wrap: wrap;
 
-    margin-top: 24px;
+    margin-top: 26px;
 }
 
 .coming-soon__button {
@@ -143,30 +183,292 @@ body::before {
     min-width: 160px;
     padding: 12px 26px;
 
+    font-family: 'Amatic SC', cursive;
     font-size: 28px;
     font-weight: 700;
     text-decoration: none;
+    cursor: pointer;
 
     border-radius: 999px;
     transition: all 0.25s ease;
 }
 
 .coming-soon__button--primary {
-    color: #FFFFFF;
-    background: #244F83;
-    border: 2px solid #244F83;
+    color: var(--color-blanco);
+    background: var(--color-azul);
+    border: 2px solid var(--color-azul);
 }
 
 .coming-soon__button--secondary {
-    color: #244F83;
-    background: #FFFFFF;
-    border: 2px solid #5BAEB0;
+    color: var(--color-azul);
+    background: var(--color-blanco);
+    border: 2px solid var(--color-turquesa);
 }
 
 .coming-soon__button:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 24px rgba(36, 79, 131, 0.22);
 }
+
+.coming-soon__button:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* =========================
+   SECCIONES
+========================= */
+
+.info-section h2,
+.final-section h2 {
+    max-width: 780px;
+    margin: 0 auto 20px;
+
+    font-size: clamp(42px, 6vw, 68px);
+    line-height: 1;
+    color: var(--color-azul);
+}
+
+.info-section p,
+.final-section p {
+    max-width: 760px;
+    margin: 0 auto 18px;
+
+    font-size: 28px;
+    line-height: 1.25;
+    color: var(--color-azul);
+}
+
+
+/* =========================
+   TARJETAS DE QUÉ PREPARAMOS
+========================= */
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-top: 34px;
+}
+
+.feature-card {
+    padding: 26px 22px;
+    border-radius: 28px;
+
+    background: rgba(255, 255, 255, 0.72);
+    border: 2px solid rgba(91, 174, 176, 0.22);
+
+    box-shadow: 0 12px 28px rgba(36, 79, 131, 0.10);
+}
+
+.feature-card i {
+    margin-bottom: 14px;
+    font-size: 38px;
+    color: var(--color-turquesa);
+}
+
+.feature-card h3 {
+    margin: 0 0 12px;
+
+    font-size: 34px;
+    line-height: 1;
+    color: var(--color-azul);
+}
+
+.feature-card p {
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+
+/* =========================
+   ENCUESTA
+========================= */
+
+.survey-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+
+    max-width: 820px;
+    margin: 34px auto 0;
+}
+
+.survey-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 76px;
+    padding: 18px 22px;
+
+    font-family: 'Amatic SC', cursive;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: center;
+    text-decoration: none;
+
+    color: var(--color-azul);
+    background: rgba(255, 255, 255, 0.78);
+    border: 2px solid rgba(91, 174, 176, 0.35);
+    border-radius: 26px;
+
+    cursor: pointer;
+    box-shadow: 0 12px 28px rgba(36, 79, 131, 0.10);
+    transition: all 0.25s ease;
+}
+
+.survey-option:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 34px rgba(36, 79, 131, 0.16);
+    border-color: var(--color-turquesa);
+}
+
+.survey-option:focus {
+    outline: none;
+    border-color: var(--color-turquesa);
+    box-shadow: 0 0 0 4px rgba(91, 174, 176, 0.16);
+}
+
+
+/* =========================
+   FORMULARIO LISTA DE ESPERA
+========================= */
+
+.waitlist-form {
+    display: grid;
+    gap: 12px;
+
+    max-width: 620px;
+    margin: 34px auto 0;
+    padding: 28px;
+
+    text-align: left;
+
+    background: rgba(255, 255, 255, 0.72);
+    border: 2px solid rgba(91, 174, 176, 0.25);
+    border-radius: 30px;
+
+    box-shadow: 0 12px 28px rgba(36, 79, 131, 0.10);
+}
+
+.waitlist-form label {
+    font-size: 27px;
+    font-weight: 700;
+    color: var(--color-azul);
+}
+
+.waitlist-form input,
+.waitlist-form select,
+.waitlist-form textarea {
+    width: 100%;
+    padding: 14px 18px;
+
+    font-family: 'Amatic SC', cursive;
+    font-size: 25px;
+    color: var(--color-azul);
+
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid rgba(36, 79, 131, 0.18);
+    border-radius: 18px;
+
+    outline: none;
+}
+
+.waitlist-form input::placeholder,
+.waitlist-form textarea::placeholder {
+    color: rgba(36, 79, 131, 0.55);
+}
+
+.waitlist-form input:focus,
+.waitlist-form select:focus,
+.waitlist-form textarea:focus {
+    border-color: var(--color-turquesa);
+    box-shadow: 0 0 0 4px rgba(91, 174, 176, 0.15);
+}
+
+.waitlist-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.waitlist-form button {
+    width: fit-content;
+    margin: 12px auto 0;
+}
+
+.waitlist-form small {
+    display: block;
+    margin-top: 10px;
+
+    text-align: center;
+    font-size: 21px;
+    line-height: 1.25;
+    color: rgba(36, 79, 131, 0.75);
+}
+
+.form-message {
+    min-height: 30px;
+    margin: 12px 0 0;
+
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.form-message--success {
+    color: var(--color-azul);
+}
+
+.form-message--error {
+    color: var(--color-error);
+}
+
+
+/* =========================
+   MINI POSTS
+========================= */
+
+.mini-post-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 34px;
+}
+
+.mini-post {
+    padding: 26px 22px;
+    border-radius: 28px;
+
+    background: rgba(255, 255, 255, 0.72);
+    border: 2px solid rgba(91, 174, 176, 0.22);
+
+    box-shadow: 0 12px 28px rgba(36, 79, 131, 0.10);
+}
+
+.mini-post h3 {
+    margin: 0 0 12px;
+
+    font-size: 34px;
+    line-height: 1;
+    color: var(--color-azul);
+}
+
+.mini-post p {
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
 
 .coming-soon__footer {
     margin: 32px 0 0;
@@ -180,10 +482,20 @@ body::before {
    RESPONSIVE
 ========================= */
 
-@media (max-width: 600px) {
+@media (max-width: 950px) {
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
+    .mini-post-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 760px) {
     .coming-soon {
-        padding: 22px 14px;
+        padding: 22px 14px 50px;
+        gap: 24px;
     }
 
     .coming-soon__card {
@@ -191,20 +503,62 @@ body::before {
         border-radius: 28px;
     }
 
+    .hero-section {
+        min-height: auto;
+    }
+
     .coming-soon__logo {
         width: 105px;
     }
 
     .coming-soon__subtitle {
-        font-size: 28px;
+        font-size: 29px;
     }
 
-    .coming-soon__text {
+    .coming-soon__text,
+    .info-section p,
+    .final-section p {
         font-size: 25px;
     }
 
-    .coming-soon__button {
+    .coming-soon__badge,
+    .section-label {
+        font-size: 25px;
+        padding: 9px 20px;
+    }
+
+    .feature-grid,
+    .survey-options {
+        grid-template-columns: 1fr;
+    }
+
+    .coming-soon__button,
+    .survey-option {
         width: 100%;
         font-size: 26px;
+    }
+
+    .waitlist-form {
+        padding: 22px;
+    }
+
+    .waitlist-form button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 420px) {
+    .coming-soon__title {
+        font-size: 58px;
+    }
+
+    .info-section h2,
+    .final-section h2 {
+        font-size: 40px;
+    }
+
+    .feature-card h3,
+    .mini-post h3 {
+        font-size: 31px;
     }
 }
