@@ -312,7 +312,8 @@ button.coming-soon__button {
 ========================= */
 
 .info-section,
-.final-section {
+.final-section,
+#lista-espera {
     scroll-margin-top: 30px;
 }
 
