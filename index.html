@@ -38,23 +38,30 @@
 <body>
   <div class="page-progress" aria-hidden="true"></div>
 
-  <header class="site-header">
-    <div class="site-header__inner">
-        <img src="images/nevabitalogo.png" alt="Logo Neva Bita" class="site-header__logo" />
-       <h1 class="site-header__title">
-          Neva <i class="fa-solid fa-snowflake site-header__snowflake"></i> Bita
-        </h1>
-      </a>
+ <header class="site-header">
+  <div class="site-header__inner">
 
-      <nav class="site-header__nav" aria-label="Navegación principal">
-        <a href="#que-hacemos" class="js-scroll">Qué hacemos</a>
-        <a href="#preparamos" class="js-scroll">Packs</a>
-        <a href="#participa" class="js-scroll">Participa</a>
-        <a href="#lista-espera" class="site-header__button js-scroll">Apuntarme</a>
-      </nav>
-    </div>
-  </header>
+    <a href="#inicio" class="site-header__brand js-scroll" aria-label="Ir al inicio">
+      <img 
+        src="images/nevabitalogo.png" 
+        alt="Logo Neva Bita" 
+        class="site-header__logo" 
+      />
 
+      <span class="site-header__title">
+        Neva <i class="fa-solid fa-snowflake site-header__snowflake"></i> Bita
+      </span>
+    </a>
+
+    <nav class="site-header__nav" aria-label="Navegación principal">
+      <a href="#que-hacemos" class="js-scroll">Qué hacemos</a>
+      <a href="#preparamos" class="js-scroll">Packs</a>
+      <a href="#participa" class="js-scroll">Participa</a>
+      <a href="#lista-espera" class="site-header__button js-scroll">Apuntarme</a>
+    </nav>
+
+  </div>
+</header>
   <main class="home-main" id="inicio">
     <section class="home-hero reveal-on-scroll">
       <div class="home-hero__content">
@@ -65,6 +72,8 @@
         <p class="home-hero__description">
           Todavía no abrimos reservas, pero ya estamos preparando escapadas con encanto para disfrutar la nieve sin complicarte.
         </p>
+
+     
 
         <div class="home-hero__actions">
           <a href="#lista-espera" class="home-hero__button home-hero__button--primary js-scroll">
@@ -186,6 +195,8 @@
       </div>
     </section>
 
+  
+
     <section class="content-section reveal-on-scroll" id="lista-espera">
       <span class="section-label">Lista de interesados</span>
       <h2>¿Quieres enterarte antes que nadie?</h2>
@@ -225,6 +236,23 @@
         <small>Todavía no estamos abriendo reservas. Solo te avisaremos de novedades relacionadas con Neva Bita.</small>
       </form>
     </section>
+
+<section class="coming-soon-partner">
+  <p class="coming-soon-partner__eyebrow">Colaboración en pistas</p>
+
+  <div class="coming-soon-partner__brand">
+    <img 
+      src="./images/logosurski.png" 
+      alt="SurSki Sierra Nevada" 
+      class="coming-soon-partner__logo"
+    />
+  </div>
+
+  <p>
+    Para las futuras clases de esquí y snowboard contaremos con la colaboracion en pistas de
+    <strong>SurSki </strong>, profesionales de la nieve.
+  </p>
+</section>
 
     <section class="content-section final-section reveal-on-scroll">
       <span class="section-label">Mientras llega la nieve</span>
