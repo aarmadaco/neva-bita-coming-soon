@@ -84,22 +84,6 @@ function initSurveyOptions() {
   });
 }
 
-function initEmailCopy() {
-  document.querySelectorAll(".js-copy-email").forEach(button => {
-    button.addEventListener("click", async event => {
-      event.preventDefault();
-      const email = button.dataset.email;
-      const section = button.closest("section");
-      const message = section ? section.querySelector(".email-copy-message") : null;
-      try {
-        await navigator.clipboard.writeText(email);
-        if (message) message.textContent = `Correo copiado: ${email}`;
-      } catch {
-        if (message) message.textContent = `Escríbenos a: ${email}`;
-      }
-    });
-  });
-}
 
 function initWaitlistForm() {
   if (!form || !formMessage) return;
@@ -138,7 +122,6 @@ initSmoothNavigation();
 initRevealAnimations();
 initPackCards();
 initSurveyOptions();
-initEmailCopy();
 initWaitlistForm();
 updateProgressBar();
 window.addEventListener("scroll", updateProgressBar, { passive: true });
